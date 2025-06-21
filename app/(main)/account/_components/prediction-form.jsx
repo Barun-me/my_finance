@@ -111,7 +111,7 @@ export function PredictionForm() {
         {prediction != null && (
           <div className="mt-6 text-center">
             <p className="text-lg">
-              Estimated yearly leftover:{" "}
+              Estimated monthly leftover:{" "}
               <span className="font-bold text-green-600">
                 ${prediction.toFixed(2)}
               </span>
