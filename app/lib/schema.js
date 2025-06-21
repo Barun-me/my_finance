@@ -29,3 +29,32 @@ export const transactionSchema = z
       });
     }
   });
+
+export const predictionSchema = z.object({
+  Income: z.number().min(0),
+  Age: z.number().min(0),
+  Dependents: z.number().min(0),
+  Occupation: z.string().nonempty(),
+  City_Tier: z.enum(["Tier_1", "Tier_2", "Tier_3"]),
+  Rent: z.number().min(0),
+  Loan_Repayment: z.number().min(0),
+  Insurance: z.number().min(0),
+  Groceries: z.number().min(0),
+  Transport: z.number().min(0),
+  Desired_Savings: z.number().min(0),
+  Disposable_Income: z.number().min(0),
+  Potential_Savings_Groceries: z.number().min(0),
+  Potential_Savings_Transport: z.number().min(0),
+  Potential_Savings_Eating_Out: z.number().min(0),
+  Potential_Savings_Entertainment: z.number().min(0),
+  Potential_Savings_Utilities: z.number().min(0),
+  Potential_Savings_Healthcare: z.number().min(0),
+  Potential_Savings_Education: z.number().min(0),
+  Education: z.number().min(0),
+  Miscellaneous: z.number().min(0),
+  Entertainment: z.number().min(0),
+  Desired_Savings_Percentage: z.number().min(0).max(100),
+  Healthcare: z.number().min(0),
+  Utilities: z.number().min(0),
+  Eating_Out: z.number().min(0),
+});

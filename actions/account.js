@@ -148,3 +148,23 @@ export async function updateDefaultAccount(accountId) {
     return { success: false, error: error.message };
   }
 }
+
+// 3. onSubmit sends to your Render URL
+export const onSubmit = async (data, setLoading, setPrediction) => {
+  setLoading(true);
+  setPrediction(null);
+  try {
+    const res = await fetch("https://my-finance-evje.onrender.com/predict", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    const json = await res.json();
+    setPrediction(json.prediction);
+  } catch (err) {
+    console.error(err);
+    alert("Unable to fetch prediction. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};

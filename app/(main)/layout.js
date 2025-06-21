@@ -1,3 +1,4 @@
+//layout.js
 import React from "react";
 
 const MainLayout = ({ children }) => {
